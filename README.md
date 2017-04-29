@@ -1,0 +1,2 @@
+# PJournal
+Android Side Project
