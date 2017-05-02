@@ -1,21 +1,22 @@
 package com.tmf.pjournal;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CalendarView;
+import android.widget.EditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
+// TODO rename to CalendarActivity?
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setupBackgroundUI();
+        fixNavView();
     }
 
     private void setupBackgroundUI() {
@@ -56,15 +58,48 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    // TODO how to make all activities have same navigation drawer
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        if (item.isEnabled()) {
+            switch (item.getItemId()) {
+                case R.id.nav_calendar:
+                    startActivity(new Intent(this, MainActivity.class));
+                    break;
 
-        switch (item.getItemId()) {
-//            case TODO fill with nav items
+                case R.id.nav_stats:
+                    break;
+
+                case R.id.nav_search:
+                    break;
+
+                case R.id.nav_profile:
+                    break;
+            }
         }
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    // FROM HERE ON NOW
+    // methods/variables unique to activity
+
+    @BindView(R.id.calendar)
+    CalendarView calendar;
+
+    private void fixNavView() {
+        // DISABLE CURRENT ACTIVITY IN NAV VIEW
+        MenuItem menuItem = navigationView.getMenu().findItem(R.id.nav_calendar);
+        menuItem.setEnabled(false);
+    }
+
+    @OnClick(R.id.etCalendarNote) public void notePressed() {
+
+    }
+
+
+
 }

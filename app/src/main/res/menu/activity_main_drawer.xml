@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/navmenu_top">
-
+<!--TODO change color of item when selected-->
         <item
             android:id="@+id/nav_calendar"
-            android:title="Calendar" />
+            android:title="Calendar"/>
         <item
             android:id="@+id/nav_stats"
             android:title="Statistics" />
         <item
-            android:id="@+id/nav_summary"
-            android:title="Summary" />
+            android:id="@+id/nav_search"
+            android:title="Search Log" />
         <item
-            android:id="@+id/nav_help"
-            android:title="Help"/>
+            android:id="@+id/nav_resources"
+            android:title="Resources"/>
 
     </group>
 
     <group android:id="@+id/navmenu_bottom">
 
         <item
-            android:id="@+id/nav_settings"
-            android:title="Settings"/>
+            android:id="@+id/nav_profile"
+            android:title="Profile"/>
 
 
         <!--TODO implement login-->
