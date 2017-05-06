@@ -6,11 +6,9 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:orientation="vertical"
-    tools:context="com.tmf.pjournal.MainActivity"
+    tools:context="com.tmf.pjournal.activity.MainActivity"
     tools:showIn="@layout/app_bar_main"
     android:weightSum="1">
-
-    <!--TODO main screen-->
 
     <CalendarView
         android:id="@+id/calendar"
@@ -21,18 +19,20 @@
         android:layout_weight="0.7">
     </CalendarView>
 
-    <!--TODO add some separator here -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/colorPrimary"/>
 
-    <EditText
-        android:id="@+id/etCalendarNote"
-        android:enabled="false"
-        android:inputType="textMultiLine"
+    <TextView
+        android:id="@+id/tvCalendarNote"
+        android:textSize="18sp"
         android:padding="16dp"
         android:gravity="top|left"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.3"
-        android:hint="Add a note..."
+        android:hint="@string/add_a_note"
         android:scrollbars="vertical"/>
 
 </LinearLayout>

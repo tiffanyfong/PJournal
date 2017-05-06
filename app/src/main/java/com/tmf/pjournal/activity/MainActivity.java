@@ -1,4 +1,4 @@
-package com.tmf.pjournal;
+package com.tmf.pjournal.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.CalendarView;
-import android.widget.EditText;
+import android.widget.Toast;
+
+import com.tmf.pjournal.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,6 +22,7 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final String KEY_DATE_MILLIS = "KEY_DATE_MILLIS";
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -96,8 +99,10 @@ public class MainActivity extends AppCompatActivity
         menuItem.setEnabled(false);
     }
 
-    @OnClick(R.id.etCalendarNote) public void notePressed() {
-
+    @OnClick(R.id.tvCalendarNote) public void notePressed() {
+        Intent showNoteActivity = new Intent(MainActivity.this, NoteActivity.class);
+        showNoteActivity.putExtra(KEY_DATE_MILLIS,calendar.getDate());
+        startActivity(showNoteActivity);
     }
 
 

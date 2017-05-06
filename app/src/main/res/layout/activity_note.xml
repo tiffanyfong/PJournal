@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.tmf.pjournal.NoteActivity">
+    tools:context="com.tmf.pjournal.activity.NoteActivity">
 
     <EditText
         android:id="@+id/etNote"
         android:inputType="textMultiLine"
+        android:gravity="top|left"
         android:scrollbars="vertical"
         android:minLines="5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Add a note..."/>
+        android:hint="@string/add_a_note"/>
 
     <Button
         android:id="@+id/btnSaveNote"
