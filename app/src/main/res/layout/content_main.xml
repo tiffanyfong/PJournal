@@ -1,38 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:orientation="vertical"
-    tools:context="com.tmf.pjournal.activity.MainActivity"
-    tools:showIn="@layout/app_bar_main"
-    android:weightSum="1">
+    tools:context="com.tmf.pjournal.activity.MainActivity">
 
     <CalendarView
         android:id="@+id/calendar"
-        android:layout_height="0dp"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:weekDayTextAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:dateTextAppearance="@style/calendarDateText"
-        android:layout_weight="0.7">
-    </CalendarView>
+        android:dateTextAppearance="@style/calendarDateText"/>
 
     <View
+        android:id="@+id/spacerCalendar"
+        android:layout_below="@+id/calendar"
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:background="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/tvCalendarNote"
+        android:layout_below="@+id/spacerCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
         android:textSize="18sp"
         android:padding="16dp"
         android:gravity="top|left"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"
         android:hint="@string/add_a_note"
         android:scrollbars="vertical"/>
-
-</LinearLayout>
+</RelativeLayout>

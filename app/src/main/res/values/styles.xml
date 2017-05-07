@@ -19,6 +19,6 @@
 
     <style name="calendarDateText" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textColor">@android:color/black</item>
-        </style>
+    </style>
 
 </resources>

@@ -4,16 +4,16 @@
 <!--TODO change color of item when selected-->
         <item
             android:id="@+id/nav_calendar"
-            android:title="Calendar"/>
+            android:title="@string/calendar"/>
         <item
             android:id="@+id/nav_stats"
-            android:title="Statistics" />
+            android:title="@string/statistics" />
         <item
             android:id="@+id/nav_search"
-            android:title="Search Log" />
+            android:title="@string/search_notes" />
         <item
             android:id="@+id/nav_resources"
-            android:title="Resources"/>
+            android:title="@string/resources"/>
 
     </group>
 
@@ -21,13 +21,13 @@
 
         <item
             android:id="@+id/nav_profile"
-            android:title="Profile"/>
+            android:title="@string/profile"/>
 
 
         <!--TODO implement login-->
         <item
             android:id="@+id/nav_logout"
-            android:title="Logout"
+            android:title="@string/logout"
             android:visible="false"/>
 
     </group>
