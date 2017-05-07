@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tmf.pjournal.activity.ResourcesActivity">
+
+    <!--TODO list of resources
+    words to know
+    FAQ for P-Journal
+    links to planned parenthood and other websites
+    -->
+
+    <Button
+        android:id="@+id/btnWordsToKnow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/words_to_know"
+        android:textAllCaps="false"
+        android:gravity="center_vertical|start"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/btnPJournalFAQs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/p_journal_faqs"
+        android:gravity="center_vertical|start"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/btnPlannedParenthood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textColor="@android:color/holo_blue_light"
+        android:text="@string/plannedparenthood_org"
+        android:gravity="center_vertical|start"
+        android:drawableRight="@drawable/external_link_48"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/btnWomensHealth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textColor="@android:color/holo_blue_light"
+        android:text="@string/womenshealth_gov"
+        android:gravity="center_vertical|start"
+        android:drawableRight="@drawable/external_link_48"
+        style="?android:attr/borderlessButtonStyle"
+        />
+</LinearLayout>

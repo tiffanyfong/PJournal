@@ -79,6 +79,10 @@ public abstract class BaseActivity extends AppCompatActivity
 //                startActivity(new Intent(this, SearchActivity.class));
                 break;
 
+            case R.id.nav_resources:
+                startActivity(new Intent(this, ResourcesActivity.class));
+                break;
+
             case R.id.nav_profile:
 //                startActivity(new Intent(this, ProfileActivity.class));
                 break;

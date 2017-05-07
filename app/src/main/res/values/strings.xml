@@ -15,4 +15,8 @@
     <string name="resources">Resources</string>
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
+    <string name="plannedparenthood_org">PlannedParenthood.org</string>
+    <string name="womenshealth_gov">WomensHealth.gov</string>
+    <string name="words_to_know">Words to Know</string>
+    <string name="p_journal_faqs">P-Journal FAQs</string>
 </resources>
