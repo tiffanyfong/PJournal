@@ -76,7 +76,7 @@ public abstract class BaseActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_search:
-//                startActivity(new Intent(this, SearchActivity.class));
+                startActivity(new Intent(this, SearchActivity.class));
                 break;
 
             case R.id.nav_resources:
@@ -84,7 +84,7 @@ public abstract class BaseActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_profile:
-//                startActivity(new Intent(this, ProfileActivity.class));
+                startActivity(new Intent(this, ProfileActivity.class));
                 break;
         }
 
