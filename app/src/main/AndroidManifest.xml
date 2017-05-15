@@ -28,8 +28,12 @@
         <activity
             android:name=".activity.ResourcesActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.ProfileActivity" />
-        <activity android:name=".activity.SearchActivity"></activity>
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activity.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

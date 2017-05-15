@@ -19,12 +19,13 @@ public class SearchActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_search);
         ButterKnife.bind(this);
+        disableNavItem(R.id.nav_search);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, MOODS);
         autotvSearch.setAdapter(adapter);
     }
 
     private static final String[] MOODS = new String[] {
-            "angry", "happy", "sad", "anxious", "silly", "awesome"
+            "angry", "happy", "sad", "anxious", "silly", "awesome", "antsy", "animalistic"
     };
 }

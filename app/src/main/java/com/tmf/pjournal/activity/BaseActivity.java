@@ -14,6 +14,9 @@ import android.widget.LinearLayout;
 
 import com.tmf.pjournal.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public abstract class BaseActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -63,9 +66,16 @@ public abstract class BaseActivity extends AppCompatActivity
         }
     }
 
+    protected static String getCurrentDateString() {
+        SimpleDateFormat formatter = new SimpleDateFormat("M/d/yyyy");
+        return formatter.format(new Date(System.currentTimeMillis()));
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        baseDrawer.closeDrawer(GravityCompat.START);
+
         switch (item.getItemId()) {
             case R.id.nav_calendar:
                 startActivity(new Intent(this, MainActivity.class));
@@ -88,7 +98,6 @@ public abstract class BaseActivity extends AppCompatActivity
                 break;
         }
 
-        baseDrawer.closeDrawer(GravityCompat.START);
         return true;
     }
 

@@ -7,20 +7,22 @@
     android:orientation="vertical"
     tools:context="com.tmf.pjournal.activity.NoteActivity">
 
-    <EditText
-        android:id="@+id/etNote"
-        android:inputType="textMultiLine"
-        android:gravity="top|left"
-        android:scrollbars="vertical"
-        android:minLines="5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/add_a_note"/>
-
     <Button
         android:id="@+id/btnSaveNote"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save"/>
+        android:text="Save" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/notePager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.PagerTabStrip
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>

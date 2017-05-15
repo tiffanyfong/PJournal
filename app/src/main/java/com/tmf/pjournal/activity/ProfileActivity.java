@@ -10,5 +10,6 @@ public class ProfileActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_profile);
+        disableNavItem(R.id.nav_profile);
     }
 }

@@ -7,11 +7,10 @@
     android:orientation="vertical"
     tools:context="com.tmf.pjournal.activity.ResourcesActivity">
 
-    <!--TODO list of resources
-    words to know
-    FAQ for P-Journal
-    links to planned parenthood and other websites
-    -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#777"/>
 
     <Button
         android:id="@+id/btnWordsToKnow"
@@ -23,6 +22,11 @@
         style="?android:attr/borderlessButtonStyle"
         />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#777"/>
+
     <Button
         android:id="@+id/btnPJournalFAQs"
         android:layout_width="match_parent"
@@ -32,6 +36,11 @@
         android:gravity="center_vertical|start"
         style="?android:attr/borderlessButtonStyle"
         />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#777"/>
 
     <Button
         android:id="@+id/btnPlannedParenthood"
@@ -45,6 +54,11 @@
         style="?android:attr/borderlessButtonStyle"
         />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#777"/>
+
     <Button
         android:id="@+id/btnWomensHealth"
         android:layout_width="match_parent"
@@ -56,4 +70,9 @@
         android:drawableRight="@drawable/external_link_48"
         style="?android:attr/borderlessButtonStyle"
         />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#777"/>
 </LinearLayout>
