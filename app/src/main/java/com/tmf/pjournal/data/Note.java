@@ -4,17 +4,17 @@ import io.realm.RealmObject;
 
 public class Note extends RealmObject {
     // TODO make date primaryKey
-    private long dateMillis;
+    private String date;
     private String noteText;
 
     public Note() {}
 
-    public long getDateMillis() {
-        return dateMillis;
+    public String getDate() {
+        return date;
     }
 
-    public void setDateMillis(long dateMillis) {
-        this.dateMillis = dateMillis;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getNoteText() {

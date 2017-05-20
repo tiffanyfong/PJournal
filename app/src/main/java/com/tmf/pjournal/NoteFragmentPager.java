@@ -3,6 +3,8 @@ package com.tmf.pjournal;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.SparseArray;
+import android.view.ViewGroup;
 
 import com.tmf.pjournal.noteFragment.FragmentHygiene;
 import com.tmf.pjournal.noteFragment.FragmentMoods;
@@ -10,6 +12,7 @@ import com.tmf.pjournal.noteFragment.FragmentNote;
 import com.tmf.pjournal.noteFragment.FragmentSymptoms;
 
 public class NoteFragmentPager extends FragmentPagerAdapter {
+    public SparseArray<Fragment> registeredFragments = new SparseArray<Fragment>();
 
     public NoteFragmentPager(FragmentManager fm) {
         super(fm);
@@ -50,5 +53,18 @@ public class NoteFragmentPager extends FragmentPagerAdapter {
             default:
                 return "Notes";
         }
+    }
+
+    @Override
+    public Object instantiateItem(ViewGroup container, int position) {
+        Fragment fragment = (Fragment) super.instantiateItem(container, position);
+        registeredFragments.put(position, fragment);
+        return fragment;
+    }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        registeredFragments.remove(position);
+        super.destroyItem(container, position, object);
     }
 }

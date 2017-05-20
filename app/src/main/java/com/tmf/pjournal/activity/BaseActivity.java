@@ -67,8 +67,12 @@ public abstract class BaseActivity extends AppCompatActivity
     }
 
     protected static String getCurrentDateString() {
+        return getDateStringFromMillis(System.currentTimeMillis());
+    }
+
+    protected static String getDateStringFromMillis(long millis) {
         SimpleDateFormat formatter = new SimpleDateFormat("M/d/yyyy");
-        return formatter.format(new Date(System.currentTimeMillis()));
+        return formatter.format(new Date(millis));
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
