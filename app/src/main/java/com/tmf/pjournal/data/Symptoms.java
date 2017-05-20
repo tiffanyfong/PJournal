@@ -4,7 +4,7 @@ package com.tmf.pjournal.data;
 import io.realm.RealmObject;
 
 public class Symptoms extends RealmObject {
-    private long dateMillis;
+    private String date;
 
     // common symptoms - default
     private boolean acne;
@@ -23,12 +23,12 @@ public class Symptoms extends RealmObject {
 
     public Symptoms() {}
 
-    public long getDateMillis() {
-        return dateMillis;
+    public String getDate() {
+        return date;
     }
 
-    public void setDateMillis(long dateMillis) {
-        this.dateMillis = dateMillis;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public boolean isAcne() {

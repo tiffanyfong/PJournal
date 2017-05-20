@@ -3,6 +3,7 @@ package com.tmf.pjournal;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
@@ -12,7 +13,7 @@ import com.tmf.pjournal.noteFragment.FragmentNote;
 import com.tmf.pjournal.noteFragment.FragmentSymptoms;
 
 public class NoteFragmentPager extends FragmentPagerAdapter {
-    public SparseArray<Fragment> registeredFragments = new SparseArray<Fragment>();
+    public SparseArray<Fragment> registeredFragments = new SparseArray<>();
 
     public NoteFragmentPager(FragmentManager fm) {
         super(fm);
@@ -64,7 +65,32 @@ public class NoteFragmentPager extends FragmentPagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
+        updateRealm(position);
         registeredFragments.remove(position);
         super.destroyItem(container, position, object);
+    }
+
+    public void updateRealm(int position) {
+        Fragment f = registeredFragments.get(position);
+        if (f != null) {
+            Log.d("DEBUG", "FRAGMENT TO BE REMOVED: " + position);
+            switch (position) {
+                case 0:
+                    ((FragmentNote) f).updateRealm();
+                    break;
+                case 1:
+//                ((FragmentSymptoms) f).updateRealm();
+                    break;
+                case 2:
+                    ((FragmentMoods) f).updateRealm();
+                    break;
+                case 3:
+//                ((FragmentHygiene) f).updateRealm();
+                    break;
+                default:
+                    ((FragmentNote) f).updateRealm();
+                    break;
+            }
+        }
     }
 }

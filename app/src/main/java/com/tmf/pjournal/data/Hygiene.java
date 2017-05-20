@@ -3,7 +3,7 @@ package com.tmf.pjournal.data;
 import io.realm.RealmObject;
 
 public class Hygiene extends RealmObject {
-    private long dateMillis;
+    private String date;
 
     private int lightTampons;
     private int mediumTampons;
@@ -17,12 +17,12 @@ public class Hygiene extends RealmObject {
 
     public Hygiene() {}
 
-    public long getDateMillis() {
-        return dateMillis;
+    public String getDate() {
+        return date;
     }
 
-    public void setDateMillis(long dateMillis) {
-        this.dateMillis = dateMillis;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getLightTampons() {

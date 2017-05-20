@@ -7,7 +7,7 @@ import io.realm.RealmConfiguration;
 
 public class MainApplication extends Application {
 
-    private Realm realmNote;
+    private Realm realm;
 
     @Override
     public void onCreate() {
@@ -20,14 +20,14 @@ public class MainApplication extends Application {
                 .Builder()
                 .deleteRealmIfMigrationNeeded()
                 .build();
-        realmNote = Realm.getInstance(config);
+        realm = Realm.getInstance(config);
     }
 
     public void closeRealm() {
-        realmNote.close();
+        realm.close();
     }
 
-    public Realm getRealmNote() {
-        return realmNote;
+    public Realm getRealm() {
+        return realm;
     }
 }

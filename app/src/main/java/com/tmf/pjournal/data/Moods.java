@@ -3,12 +3,14 @@ package com.tmf.pjournal.data;
 import io.realm.RealmObject;
 
 public class Moods extends RealmObject {
-    private long dateMillis;
+    private String date;
 
     // common moods - default
     private boolean angry;
+    private boolean anxious;
     private boolean blah;
     private boolean calm;
+    private boolean confused;
     private boolean depressed;
     private boolean fine;
     private boolean happy;
@@ -22,12 +24,20 @@ public class Moods extends RealmObject {
 
     public Moods() {}
 
-    public long getDateMillis() {
-        return dateMillis;
+    public String getDate() {
+        return date;
     }
 
-    public void setDateMillis(long dateMillis) {
-        this.dateMillis = dateMillis;
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public boolean isAnxious() {
+        return anxious;
+    }
+
+    public void setAnxious(boolean anxious) {
+        this.anxious = anxious;
     }
 
     public boolean isAngry() {
@@ -52,6 +62,14 @@ public class Moods extends RealmObject {
 
     public void setCalm(boolean calm) {
         this.calm = calm;
+    }
+
+    public boolean isConfused() {
+        return confused;
+    }
+
+    public void setConfused(boolean confused) {
+        this.confused = confused;
     }
 
     public boolean isDepressed() {

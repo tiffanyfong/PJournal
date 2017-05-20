@@ -1,4 +1,22 @@
 <resources>
+    <string-array name="moodsArray">
+        <item>@string/angry</item>
+        <item>@string/anxious</item>
+        <item>@string/blah</item>
+        <item>@string/calm</item>
+        <item>@string/confused</item>
+        <item>@string/depressed</item>
+        <item>@string/fine</item>
+        <item>@string/happy</item>
+        <item>@string/hyper</item>
+        <item>@string/in_love</item>
+        <item>@string/irritable</item>
+        <item>@string/sad</item>
+        <item>@string/sick</item>
+        <item>@string/stressed</item>
+        <item>@string/tired</item>
+    </string-array>
+
     <string name="app_name">P-Journal</string>
     <string name="title_activity_main">MainActivity</string>
 
@@ -20,4 +38,19 @@
     <string name="words_to_know">Words to Know</string>
     <string name="p_journal_faqs">P-Journal FAQs</string>
     <string name="note_saved">Note saved</string>
+    <string name="angry">angry</string>
+    <string name="anxious">anxious</string>
+    <string name="blah">blah</string>
+    <string name="calm">calm</string>
+    <string name="confused">confused</string>
+    <string name="depressed">depressed</string>
+    <string name="fine">fine</string>
+    <string name="happy">happy</string>
+    <string name="hyper">hyper</string>
+    <string name="in_love">in love</string>
+    <string name="irritable">irritable</string>
+    <string name="sad">sad</string>
+    <string name="sick">sick</string>
+    <string name="stressed">stressed</string>
+    <string name="tired">tired</string>
 </resources>

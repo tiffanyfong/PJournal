@@ -1,13 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
+    android:layout_height="wrap_content"
+    android:tag="FRAGMENT_MOODS"
+    android:scrollbars="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MOODS"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
-</LinearLayout>
+        <!--<GridView-->
+            <!--android:id="@+id/gvMoods"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center"-->
+            <!--android:numColumns="3"-->
+            <!--android:verticalSpacing="24dp"-->
+            <!--android:horizontalSpacing="10dp"-->
+            <!--android:stretchMode="spacingWidthUniform"-->
+            <!--/>-->
+
+        <ToggleButton
+            android:id="@+id/tbAngry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/angry"
+            android:textOff="@string/angry"/>
+
+        <ToggleButton
+            android:id="@+id/tbAnxious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/anxious"
+            android:textOff="@string/anxious"/>
+
+        <ToggleButton
+            android:id="@+id/tbBlah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/blah"
+            android:textOff="@string/blah"/>
+
+        <ToggleButton
+            android:id="@+id/tbConfused"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/confused"
+            android:textOff="@string/confused"/>
+
+        <ToggleButton
+            android:id="@+id/tbCalm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/calm"
+            android:textOff="@string/calm"/>
+
+        <ToggleButton
+            android:id="@+id/tbDepressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/depressed"
+            android:textOff="@string/depressed"/>
+
+        <ToggleButton
+            android:id="@+id/tbFine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/fine"
+            android:textOff="@string/fine"/>
+
+        <ToggleButton
+            android:id="@+id/tbHappy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/happy"
+            android:textOff="@string/happy"/>
+
+        <ToggleButton
+            android:id="@+id/tbHyper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/hyper"
+            android:textOff="@string/hyper"/>
+
+        <ToggleButton
+            android:id="@+id/tbInLove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/in_love"
+            android:textOff="@string/in_love"/>
+
+        <ToggleButton
+            android:id="@+id/tbIrritable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/irritable"
+            android:textOff="@string/irritable"/>
+
+        <ToggleButton
+            android:id="@+id/tbSad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/sad"
+            android:textOff="@string/sad"/>
+
+        <ToggleButton
+            android:id="@+id/tbSick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/sick"
+            android:textOff="@string/sick"/>
+
+        <ToggleButton
+            android:id="@+id/tbStressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/stressed"
+            android:textOff="@string/stressed"/>
+
+        <ToggleButton
+            android:id="@+id/tbTired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/tired"
+            android:textOff="@string/tired"/>
+    </LinearLayout>
+</ScrollView>
