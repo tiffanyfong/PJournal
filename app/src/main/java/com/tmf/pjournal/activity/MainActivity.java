@@ -11,6 +11,7 @@ import com.tmf.pjournal.MainApplication;
 import com.tmf.pjournal.R;
 import com.tmf.pjournal.data.Moods;
 import com.tmf.pjournal.data.Note;
+import com.tmf.pjournal.data.Symptoms;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +26,7 @@ public class MainActivity extends BaseActivity {
     private String selectedDate;
     private Note selectedNote;
     private Moods selectedMoods;
+    private Symptoms selectedSymptoms;
 
     @BindView(R.id.calendar)
     CalendarView calendar;
@@ -80,13 +82,15 @@ public class MainActivity extends BaseActivity {
         else {
             String noteText = selectedNote != null ? selectedNote.getNoteText() + "\n" : "";
             String moodsText = selectedMoods != null ? getAllActiveMoods() : "";
-            tvCalendarNote.setText(noteText + moodsText);
+            String symptomsText = selectedSymptoms != null ? getAllActiveSymptoms() : "";
+            tvCalendarNote.setText(noteText + symptomsText + moodsText);
         }
     }
 
     private void getDayDataFromRealm() {
         selectedNote = ((MainApplication) getApplication()).getRealm().where(Note.class).equalTo(KEY_DATE, selectedDate).findFirst();
         selectedMoods = ((MainApplication) getApplication()).getRealm().where(Moods.class).equalTo(KEY_DATE, selectedDate).findFirst();
+        selectedSymptoms = ((MainApplication) getApplication()).getRealm().where(Symptoms.class).equalTo(KEY_DATE, selectedDate).findFirst();
     }
 
     @Override
@@ -131,8 +135,40 @@ public class MainActivity extends BaseActivity {
         if (activeMoods.length() > 2) {
             return "Moods: " + activeMoods.substring(0,activeMoods.length()-2) + "\n";
         }
-        else {
-            return "";
+        return "";
+    }
+
+    public String getAllActiveSymptoms() {
+        String activeSymptoms = "";
+
+        if (selectedSymptoms.isAcne())
+            activeSymptoms += getString(R.string.acne) + ", ";
+        if (selectedSymptoms.isBackache())
+            activeSymptoms += getString(R.string.backache) + ", ";
+        if (selectedSymptoms.isBloating())
+            activeSymptoms += getString(R.string.bloating) + ", ";
+        if (selectedSymptoms.isBloodClots())
+            activeSymptoms += getString(R.string.blood_clots) + ", ";
+        if (selectedSymptoms.isCramps())
+            activeSymptoms += getString(R.string.cramps) + ", ";
+        if (selectedSymptoms.isDizziness())
+            activeSymptoms += getString(R.string.dizziness) + ", ";
+        if (selectedSymptoms.isFatigue())
+            activeSymptoms += getString(R.string.fatigue) + ", ";
+        if (selectedSymptoms.isHeadache())
+            activeSymptoms += getString(R.string.headache) + ", ";
+        if (selectedSymptoms.isInsomnia())
+            activeSymptoms += getString(R.string.insomnia) + ", ";
+        if (selectedSymptoms.isNausea())
+            activeSymptoms += getString(R.string.nausea) + ", ";
+        if (selectedSymptoms.isStomachache())
+            activeSymptoms += getString(R.string.stomachache) + ", ";
+        if (selectedSymptoms.isTenderBreasts())
+            activeSymptoms += getString(R.string.tender_breasts) + ", ";
+
+        if (activeSymptoms.length() > 2) {
+            return "Symptoms: " + activeSymptoms.substring(0, activeSymptoms.length()-2) + "\n";
         }
+        return "";
     }
 }

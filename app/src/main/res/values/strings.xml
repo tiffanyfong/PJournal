@@ -53,4 +53,16 @@
     <string name="sick">sick</string>
     <string name="stressed">stressed</string>
     <string name="tired">tired</string>
+    <string name="acne">acne</string>
+    <string name="backache">backache</string>
+    <string name="bloating">bloating</string>
+    <string name="blood_clots">blood clots</string>
+    <string name="cramps">cramps</string>
+    <string name="dizziness">dizziness</string>
+    <string name="fatigue">fatigue</string>
+    <string name="headache">headache</string>
+    <string name="insomnia">insomnia</string>
+    <string name="stomachache">stomachache</string>
+    <string name="tender_breasts">tender breasts</string>
+    <string name="nausea">nausea</string>
 </resources>

@@ -79,13 +79,13 @@ public class NoteFragmentPager extends FragmentPagerAdapter {
                     ((FragmentNote) f).updateRealm();
                     break;
                 case 1:
-//                ((FragmentSymptoms) f).updateRealm();
+                    ((FragmentSymptoms) f).updateRealm();
                     break;
                 case 2:
                     ((FragmentMoods) f).updateRealm();
                     break;
                 case 3:
-//                ((FragmentHygiene) f).updateRealm();
+//                    ((FragmentHygiene) f).updateRealm();
                     break;
                 default:
                     ((FragmentNote) f).updateRealm();

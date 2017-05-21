@@ -11,6 +11,7 @@
         android:id="@+id/calendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:weekDayTextAppearance="@style/TextAppearance.AppCompat.Medium"
         android:dateTextAppearance="@style/calendarDateText"/>
 
@@ -19,17 +20,23 @@
         android:layout_below="@+id/calendar"
         android:layout_width="match_parent"
         android:layout_height="8dp"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary" />
 
-    <TextView
-        android:id="@+id/tvCalendarNote"
-        android:layout_below="@+id/spacerCalendar"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spacerCalendar"
         android:layout_alignParentBottom="true"
-        android:textSize="18sp"
-        android:padding="16dp"
-        android:gravity="top|left"
-        android:hint="@string/add_a_note"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/tvCalendarNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:gravity="top|left"
+            android:hint="@string/add_a_note"/>
+    </ScrollView>
 </RelativeLayout>

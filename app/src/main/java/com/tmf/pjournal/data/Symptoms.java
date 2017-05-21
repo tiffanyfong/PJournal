@@ -9,11 +9,10 @@ public class Symptoms extends RealmObject {
     // common symptoms - default
     private boolean acne;
     private boolean backache;
-    private boolean cramps;
-    private boolean cravingsSalty;
-    private boolean cravingsSweet;
-    private boolean dizziness;
     private boolean bloating;
+    private boolean bloodClots;
+    private boolean cramps;
+    private boolean dizziness;
     private boolean fatigue;
     private boolean headache;
     private boolean insomnia;
@@ -47,28 +46,20 @@ public class Symptoms extends RealmObject {
         this.backache = backache;
     }
 
+    public boolean isBloodClots() {
+        return bloodClots;
+    }
+
+    public void setBloodClots(boolean bloodClots) {
+        this.bloodClots = bloodClots;
+    }
+
     public boolean isCramps() {
         return cramps;
     }
 
     public void setCramps(boolean cramps) {
         this.cramps = cramps;
-    }
-
-    public boolean isCravingsSalty() {
-        return cravingsSalty;
-    }
-
-    public void setCravingsSalty(boolean cravingsSalty) {
-        this.cravingsSalty = cravingsSalty;
-    }
-
-    public boolean isCravingsSweet() {
-        return cravingsSweet;
-    }
-
-    public void setCravingsSweet(boolean cravingsSweet) {
-        this.cravingsSweet = cravingsSweet;
     }
 
     public boolean isDizziness() {

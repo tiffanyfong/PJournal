@@ -18,7 +18,7 @@ public class FragmentMoods extends Fragment {
     public static final String KEY_DATE = "date";
     public static final String TAG = "FragmentMoods";
 
-    private String[] moodsArray;
+    private String[] moodsArray; // TODO simplify code
 
 
     private Moods moods;
@@ -67,11 +67,11 @@ public class FragmentMoods extends Fragment {
 
         realm = ((NoteActivity) getActivity()).getRealm();
         moods = realm.where(Moods.class).equalTo(KEY_DATE, ((NoteActivity) getActivity()).getDate()).findFirst();
-        setMoods();
+        loadMoods();
         return v;
     }
 
-    public void setMoods() {
+    public void loadMoods() {
         if (moods != null) {
             tbAngry.setChecked(moods.isAngry());
             tbAnxious.setChecked(moods.isAnxious());
