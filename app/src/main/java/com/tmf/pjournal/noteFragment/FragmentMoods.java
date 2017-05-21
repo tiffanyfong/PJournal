@@ -15,11 +15,9 @@ import com.tmf.pjournal.data.Moods;
 import io.realm.Realm;
 
 public class FragmentMoods extends Fragment {
-    public static final String KEY_DATE = "date";
     public static final String TAG = "FragmentMoods";
 
     private String[] moodsArray; // TODO simplify code
-
 
     private Moods moods;
     private Realm realm;
@@ -66,7 +64,8 @@ public class FragmentMoods extends Fragment {
         tbTired = (ToggleButton) v.findViewById(R.id.tbTired);
 
         realm = ((NoteActivity) getActivity()).getRealm();
-        moods = realm.where(Moods.class).equalTo(KEY_DATE, ((NoteActivity) getActivity()).getDate()).findFirst();
+        moods = ((NoteActivity) getActivity()).getNote().getMoods();
+
         loadMoods();
         return v;
     }
@@ -95,7 +94,6 @@ public class FragmentMoods extends Fragment {
         if (moods == null) {
             realm.beginTransaction();
             moods = realm.createObject(Moods.class);
-            moods.setDate(((NoteActivity) getActivity()).getDate());
             realm.commitTransaction();
         }
         realm.beginTransaction();
@@ -115,6 +113,7 @@ public class FragmentMoods extends Fragment {
         moods.setSick(tbSick.isChecked());
         moods.setStressed(tbStressed.isChecked());
         moods.setTired(tbTired.isChecked());
+        ((NoteActivity) getActivity()).getNote().setMoods(moods);
 
         realm.commitTransaction();
     }

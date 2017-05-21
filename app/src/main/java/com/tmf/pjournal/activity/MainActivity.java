@@ -2,7 +2,6 @@ package com.tmf.pjournal.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,16 +16,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.tmf.pjournal.data.Note.KEY_DATE;
+
 // TODO rename to CalendarActivity?
 public class MainActivity extends BaseActivity {
 
     public static final String KEY_DATE_STRING = "KEY_DATE_STRING";
-    public static final String KEY_DATE = "date";
     public static final int REQUEST_NOTE = 101;
     private String selectedDate;
     private Note selectedNote;
-    private Moods selectedMoods;
-    private Symptoms selectedSymptoms;
 
     @BindView(R.id.calendar)
     CalendarView calendar;
@@ -76,21 +74,21 @@ public class MainActivity extends BaseActivity {
     }
 
     private void updateNoteText() {
-        if (selectedNote == null && selectedMoods == null) {
+        if (selectedNote == null) {
             tvCalendarNote.setText(null);
         }
         else {
-            String noteText = selectedNote != null ? selectedNote.getNoteText() + "\n" : "";
-            String moodsText = selectedMoods != null ? getAllActiveMoods() : "";
-            String symptomsText = selectedSymptoms != null ? getAllActiveSymptoms() : "";
+            String noteText = selectedNote.getNoteText();
+            if (noteText != null) 
+                noteText += "\n";
+            String moodsText = getAllActiveMoods(selectedNote.getMoods());
+            String symptomsText = getAllActiveSymptoms(selectedNote.getSymptoms());
             tvCalendarNote.setText(noteText + symptomsText + moodsText);
         }
     }
 
     private void getDayDataFromRealm() {
         selectedNote = ((MainApplication) getApplication()).getRealm().where(Note.class).equalTo(KEY_DATE, selectedDate).findFirst();
-        selectedMoods = ((MainApplication) getApplication()).getRealm().where(Moods.class).equalTo(KEY_DATE, selectedDate).findFirst();
-        selectedSymptoms = ((MainApplication) getApplication()).getRealm().where(Symptoms.class).equalTo(KEY_DATE, selectedDate).findFirst();
     }
 
     @Override
@@ -99,37 +97,41 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
     }
 
-    public String getAllActiveMoods() {
+    public String getAllActiveMoods(Moods moods) {
+        if (moods == null) {
+            return "";
+        }
+
         String activeMoods = "";
-        if (selectedMoods.isAngry())
+        if (moods.isAngry())
             activeMoods += getString(R.string.angry) + ", ";
-        if (selectedMoods.isAnxious())
+        if (moods.isAnxious())
             activeMoods += getString(R.string.anxious) + ", ";
-        if (selectedMoods.isBlah())
+        if (moods.isBlah())
             activeMoods += getString(R.string.blah) + ", ";
-        if (selectedMoods.isCalm())
+        if (moods.isCalm())
             activeMoods += getString(R.string.calm) + ", ";
-        if (selectedMoods.isConfused())
+        if (moods.isConfused())
             activeMoods += getString(R.string.confused) + ", ";
-        if (selectedMoods.isDepressed())
+        if (moods.isDepressed())
             activeMoods += getString(R.string.depressed) + ", ";
-        if (selectedMoods.isFine())
+        if (moods.isFine())
             activeMoods += getString(R.string.fine) + ", ";
-        if (selectedMoods.isHappy())
+        if (moods.isHappy())
             activeMoods += getString(R.string.happy) + ", ";
-        if (selectedMoods.isHyper())
+        if (moods.isHyper())
             activeMoods += getString(R.string.hyper) + ", ";
-        if (selectedMoods.isInLove())
+        if (moods.isInLove())
             activeMoods += getString(R.string.in_love) + ", ";
-        if (selectedMoods.isIrritable())
+        if (moods.isIrritable())
             activeMoods += getString(R.string.irritable) + ", ";
-        if (selectedMoods.isSad())
+        if (moods.isSad())
             activeMoods += getString(R.string.sad) + ", ";
-        if (selectedMoods.isSick())
+        if (moods.isSick())
             activeMoods += getString(R.string.sick) + ", ";
-        if (selectedMoods.isStressed())
+        if (moods.isStressed())
             activeMoods += getString(R.string.stressed) + ", ";
-        if (selectedMoods.isTired())
+        if (moods.isTired())
             activeMoods += getString(R.string.tired) + ", ";
 
         if (activeMoods.length() > 2) {
@@ -138,32 +140,35 @@ public class MainActivity extends BaseActivity {
         return "";
     }
 
-    public String getAllActiveSymptoms() {
-        String activeSymptoms = "";
+    public String getAllActiveSymptoms(Symptoms symptoms) {
+        if (symptoms == null) {
+            return "";
+        }
 
-        if (selectedSymptoms.isAcne())
+        String activeSymptoms = "";
+        if (symptoms.isAcne())
             activeSymptoms += getString(R.string.acne) + ", ";
-        if (selectedSymptoms.isBackache())
+        if (symptoms.isBackache())
             activeSymptoms += getString(R.string.backache) + ", ";
-        if (selectedSymptoms.isBloating())
+        if (symptoms.isBloating())
             activeSymptoms += getString(R.string.bloating) + ", ";
-        if (selectedSymptoms.isBloodClots())
+        if (symptoms.isBloodClots())
             activeSymptoms += getString(R.string.blood_clots) + ", ";
-        if (selectedSymptoms.isCramps())
+        if (symptoms.isCramps())
             activeSymptoms += getString(R.string.cramps) + ", ";
-        if (selectedSymptoms.isDizziness())
+        if (symptoms.isDizziness())
             activeSymptoms += getString(R.string.dizziness) + ", ";
-        if (selectedSymptoms.isFatigue())
+        if (symptoms.isFatigue())
             activeSymptoms += getString(R.string.fatigue) + ", ";
-        if (selectedSymptoms.isHeadache())
+        if (symptoms.isHeadache())
             activeSymptoms += getString(R.string.headache) + ", ";
-        if (selectedSymptoms.isInsomnia())
+        if (symptoms.isInsomnia())
             activeSymptoms += getString(R.string.insomnia) + ", ";
-        if (selectedSymptoms.isNausea())
+        if (symptoms.isNausea())
             activeSymptoms += getString(R.string.nausea) + ", ";
-        if (selectedSymptoms.isStomachache())
+        if (symptoms.isStomachache())
             activeSymptoms += getString(R.string.stomachache) + ", ";
-        if (selectedSymptoms.isTenderBreasts())
+        if (symptoms.isTenderBreasts())
             activeSymptoms += getString(R.string.tender_breasts) + ", ";
 
         if (activeSymptoms.length() > 2) {

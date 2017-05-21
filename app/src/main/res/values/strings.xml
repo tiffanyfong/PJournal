@@ -65,4 +65,6 @@
     <string name="stomachache">stomachache</string>
     <string name="tender_breasts">tender breasts</string>
     <string name="nausea">nausea</string>
+    <string name="plus_symbol">+</string>
+    <string name="minus_symbol">-</string>
 </resources>

@@ -3,7 +3,6 @@ package com.tmf.pjournal.data;
 import io.realm.RealmObject;
 
 public class Moods extends RealmObject {
-    private String date;
 
     // common moods - default
     private boolean angry;
@@ -23,14 +22,6 @@ public class Moods extends RealmObject {
     private boolean tired;
 
     public Moods() {}
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
 
     public boolean isAnxious() {
         return anxious;

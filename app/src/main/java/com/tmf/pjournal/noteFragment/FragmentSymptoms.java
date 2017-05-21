@@ -15,7 +15,6 @@ import com.tmf.pjournal.data.Symptoms;
 import io.realm.Realm;
 
 public class FragmentSymptoms extends Fragment {
-    public static final String KEY_DATE = "date";
     public static final String TAG = "FragmentSymptoms";
 
     private Symptoms symptoms;
@@ -55,7 +54,8 @@ public class FragmentSymptoms extends Fragment {
         tbTenderBreasts = (ToggleButton) v.findViewById(R.id.tbTenderBreasts);
 
         realm = ((NoteActivity) getActivity()).getRealm();
-        symptoms = realm.where(Symptoms.class).equalTo(KEY_DATE, ((NoteActivity) getActivity()).getDate()).findFirst();
+
+        symptoms = ((NoteActivity) getActivity()).getNote().getSymptoms();
         loadSymptoms();
 
         return v;
@@ -82,7 +82,6 @@ public class FragmentSymptoms extends Fragment {
         if (symptoms == null) {
             realm.beginTransaction();
             symptoms = realm.createObject(Symptoms.class);
-            symptoms.setDate(((NoteActivity) getActivity()).getDate());
             realm.commitTransaction();
         }
         realm.beginTransaction();
@@ -99,6 +98,7 @@ public class FragmentSymptoms extends Fragment {
         symptoms.setNausea(tbNausea.isChecked());
         symptoms.setStomachache(tbStomachache.isChecked());
         symptoms.setTenderBreasts(tbTenderBreasts.isChecked());
+        ((NoteActivity) getActivity()).getNote().setSymptoms(symptoms);
 
         realm.commitTransaction();
     }

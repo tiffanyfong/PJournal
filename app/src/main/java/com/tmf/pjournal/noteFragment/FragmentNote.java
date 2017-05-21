@@ -16,8 +16,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 
+import static com.tmf.pjournal.data.Note.KEY_DATE;
+
 public class FragmentNote extends Fragment {
-    public static final String KEY_DATE = "date";
     public static final String TAG = "FragmentNote";
     private Note note;
     private Realm realm;
@@ -44,7 +45,7 @@ public class FragmentNote extends Fragment {
         }
     }
 
-    private String getNoteText() {
+    private String getEtNoteText() {
         return etNoteText.getText().toString();
     }
 
@@ -56,7 +57,7 @@ public class FragmentNote extends Fragment {
             realm.commitTransaction();
         }
         realm.beginTransaction();
-        note.setNoteText(getNoteText());
+        note.setNoteText(getEtNoteText());
         realm.commitTransaction();
     }
 }
