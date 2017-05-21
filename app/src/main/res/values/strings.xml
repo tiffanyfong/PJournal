@@ -67,4 +67,11 @@
     <string name="nausea">nausea</string>
     <string name="plus_symbol">+</string>
     <string name="minus_symbol">-</string>
+    <string name="light_tampons">Light Tampons</string>
+    <string name="medium_tampons">Medium Tampons</string>
+    <string name="heavy_tampons">Heavy Tampons</string>
+    <string name="light_pads">Light Pads</string>
+    <string name="medium_pads">Medium Pads</string>
+    <string name="heavy_pads">Heavy Pads</string>
+    <string name="menstrual_cups">Menstrual Cups</string>
 </resources>

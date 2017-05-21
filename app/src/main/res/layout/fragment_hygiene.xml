@@ -6,16 +6,46 @@
     android:tag="FRAGMENT_HYGIENE"
     android:padding="10dp">
 
-    <NumberPicker
-        android:id="@+id/npLightTampons"
-        android:layout_width="wrap_content"
+    <com.tmf.pjournal.NumberPicker
+        android:id="@+id/npLightPads"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" />
+        layout="@layout/number_picker"/>
 
-    <NumberPicker
-        android:id="@+id/npMediumTampons"
-        android:layout_width="wrap_content"
+    <com.tmf.pjournal.NumberPicker
+        android:id="@+id/npMediumPads"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" />
+        layout="@layout/number_picker"/>
+
+    <com.tmf.pjournal.NumberPicker
+        android:id="@+id/npHeavyPads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/number_picker"/>
+
+    <com.tmf.pjournal.NumberPicker
+        android:id="@+id/npLightTampons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/number_picker"/>
+
+    <com.tmf.pjournal.NumberPicker
+        android:id="@+id/npMediumTampons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/number_picker"/>
+
+    <com.tmf.pjournal.NumberPicker
+        android:id="@+id/npHeavyTampons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/number_picker"/>
+
+    <com.tmf.pjournal.NumberPicker
+        android:id="@+id/npMenstrualCups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/number_picker"/>
 
 </LinearLayout>

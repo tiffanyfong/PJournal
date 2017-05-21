@@ -4,41 +4,18 @@ import io.realm.RealmObject;
 
 public class Hygiene extends RealmObject {
 
-    private int lightTampons;
-    private int mediumTampons;
-    private int heavyTampons;
-
     private int lightPads;
     private int mediumPads;
     private int heavyPads;
+
+    private int lightTampons;
+    private int mediumTampons;
+    private int heavyTampons;
 
     private int menstrualCups;
 
     public Hygiene() {}
 
-    public int getLightTampons() {
-        return lightTampons;
-    }
-
-    public void setLightTampons(int lightTampons) {
-        this.lightTampons = lightTampons;
-    }
-
-    public int getMediumTampons() {
-        return mediumTampons;
-    }
-
-    public void setMediumTampons(int mediumTampons) {
-        this.mediumTampons = mediumTampons;
-    }
-
-    public int getHeavyTampons() {
-        return heavyTampons;
-    }
-
-    public void setHeavyTampons(int heavyTampons) {
-        this.heavyTampons = heavyTampons;
-    }
 
     public int getLightPads() {
         return lightPads;
@@ -62,6 +39,30 @@ public class Hygiene extends RealmObject {
 
     public void setHeavyPads(int heavyPads) {
         this.heavyPads = heavyPads;
+    }
+
+    public int getLightTampons() {
+        return lightTampons;
+    }
+
+    public void setLightTampons(int lightTampons) {
+        this.lightTampons = lightTampons;
+    }
+
+    public int getMediumTampons() {
+        return mediumTampons;
+    }
+
+    public void setMediumTampons(int mediumTampons) {
+        this.mediumTampons = mediumTampons;
+    }
+
+    public int getHeavyTampons() {
+        return heavyTampons;
+    }
+
+    public void setHeavyTampons(int heavyTampons) {
+        this.heavyTampons = heavyTampons;
     }
 
     public int getMenstrualCups() {
