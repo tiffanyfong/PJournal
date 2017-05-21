@@ -61,18 +61,24 @@ public class FragmentHygiene extends Fragment {
     }
 
     private void setAllHygieneText() {
-        npLightPads.setTvKey(getString(R.string.light_pads));
-        npMediumPads.setTvKey(getString(R.string.medium_pads));
-        npHeavyPads.setTvKey(getString(R.string.heavy_pads));
-        npLightTampons.setTvKey(getString(R.string.light_tampons));
-        npMediumTampons.setTvKey(getString(R.string.medium_tampons));
-        npHeavyTampons.setTvKey(getString(R.string.heavy_tampons));
-        npMenstrualCups.setTvKey(getString(R.string.menstrual_cups));
+        npLightPads.setKey(getString(R.string.light_pads));
+        npMediumPads.setKey(getString(R.string.medium_pads));
+        npHeavyPads.setKey(getString(R.string.heavy_pads));
+        npLightTampons.setKey(getString(R.string.light_tampons));
+        npMediumTampons.setKey(getString(R.string.medium_tampons));
+        npHeavyTampons.setKey(getString(R.string.heavy_tampons));
+        npMenstrualCups.setKey(getString(R.string.menstrual_cups));
     }
 
     private void loadHygiene() {
         if (hygiene != null) {
-
+            npLightPads.setValue(hygiene.getLightPads());
+            npMediumPads.setValue(hygiene.getMediumPads());
+            npHeavyPads.setValue(hygiene.getHeavyPads());
+            npLightTampons.setValue(hygiene.getLightTampons());
+            npMediumTampons.setValue(hygiene.getMediumTampons());
+            npHeavyTampons.setValue(hygiene.getHeavyTampons());
+            npMenstrualCups.setValue(hygiene.getMenstrualCups());
         }
     }
 
@@ -84,18 +90,14 @@ public class FragmentHygiene extends Fragment {
         }
         realm.beginTransaction();
 
-//        hygiene.setAcne(tbAcne.isChecked());
-//        hygiene.setBackache(tbBackache.isChecked());
-//        hygiene.setBloating(tbBloating.isChecked());
-//        hygiene.setBloodClots(tbBloodClots.isChecked());
-//        hygiene.setCramps(tbCramps.isChecked());
-//        hygiene.setDizziness(tbDizziness.isChecked());
-//        hygiene.setFatigue(tbFatigue.isChecked());
-//        hygiene.setHeadache(tbHeadache.isChecked());
-//        hygiene.setInsomnia(tbInsomnia.isChecked());
-//        hygiene.setNausea(tbNausea.isChecked());
-//        hygiene.setStomachache(tbStomachache.isChecked());
-//        hygiene.setTenderBreasts(tbTenderBreasts.isChecked());
+        hygiene.setLightPads(npLightPads.getValue());
+        hygiene.setMediumPads(npMediumPads.getValue());
+        hygiene.setHeavyPads(npHeavyPads.getValue());
+        hygiene.setLightTampons(npLightTampons.getValue());
+        hygiene.setMediumTampons(npMediumTampons.getValue());
+        hygiene.setHeavyTampons(npHeavyTampons.getValue());
+        hygiene.setMenstrualCups(npMenstrualCups.getValue());
+
         ((NoteActivity) getActivity()).getNote().setHygiene(hygiene);
 
         realm.commitTransaction();

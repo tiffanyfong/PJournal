@@ -61,23 +61,33 @@ public class NumberPicker extends RelativeLayout {
         });
     }
 
-    public void setTvKey(String s) {
+    public void setKey(String s) {
         tvKey.setText(s);
     }
 
-    public void setTvValue(int i) {
+    public void setValue(int i) {
         tvValue.setText(String.valueOf(i));
+    }
+
+    public int getValue() {
+        int value = 0;
+        try {
+            value = Integer.parseInt(tvValue.getText().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return value;
     }
 
     private void increment() {
         value++;
-        setTvValue(value);
+        setValue(value);
     }
 
     private void decrement() {
         if (value > MIN_VALUE) {
             value--;
-            setTvValue(value);
+            setValue(value);
         }
     }
 
