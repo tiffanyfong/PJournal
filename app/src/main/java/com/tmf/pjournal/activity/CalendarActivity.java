@@ -2,6 +2,7 @@ package com.tmf.pjournal.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,8 +19,7 @@ import butterknife.OnClick;
 
 import static com.tmf.pjournal.data.Note.KEY_DATE;
 
-// TODO rename to CalendarActivity?
-public class MainActivity extends BaseActivity {
+public class CalendarActivity extends BaseActivity {
 
     public static final String KEY_DATE_STRING = "KEY_DATE_STRING";
     public static final int REQUEST_NOTE = 101;
@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.content_calendar);
         ButterKnife.bind(this);
         disableNavItem(R.id.nav_calendar);
 
@@ -57,7 +57,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @OnClick(R.id.tvCalendarNote) public void notePressed() {
-        Intent showNoteActivity = new Intent(MainActivity.this, NoteActivity.class);
+        Intent showNoteActivity = new Intent(CalendarActivity.this, NoteActivity.class);
         showNoteActivity.putExtra(KEY_DATE_STRING,selectedDate);
         startActivityForResult(showNoteActivity, REQUEST_NOTE);
     }
@@ -67,7 +67,7 @@ public class MainActivity extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_NOTE) {
-            Toast.makeText(this, "Note updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.note_updated), Toast.LENGTH_SHORT).show();
             getDayDataFromRealm();
             updateNoteText();
         }
@@ -78,9 +78,9 @@ public class MainActivity extends BaseActivity {
             tvCalendarNote.setText(null);
         }
         else {
-            String noteText = selectedNote.getNoteText();
-            if (noteText != null) 
-                noteText += "\n";
+            String noteText = "";
+            if (!TextUtils.isEmpty(selectedNote.getNoteText()))
+                noteText = selectedNote.getNoteText() + "\n";
             String moodsText = getAllActiveMoods(selectedNote.getMoods());
             String symptomsText = getAllActiveSymptoms(selectedNote.getSymptoms());
             tvCalendarNote.setText(noteText + symptomsText + moodsText);
@@ -135,7 +135,7 @@ public class MainActivity extends BaseActivity {
             activeMoods += getString(R.string.tired) + ", ";
 
         if (activeMoods.length() > 2) {
-            return "Moods: " + activeMoods.substring(0,activeMoods.length()-2) + "\n";
+            return getString(R.string.moods) + ": " + activeMoods.substring(0,activeMoods.length()-2) + "\n";
         }
         return "";
     }
@@ -172,7 +172,7 @@ public class MainActivity extends BaseActivity {
             activeSymptoms += getString(R.string.tender_breasts) + ", ";
 
         if (activeSymptoms.length() > 2) {
-            return "Symptoms: " + activeSymptoms.substring(0, activeSymptoms.length()-2) + "\n";
+            return getString(R.string.symptoms) + ": " + activeSymptoms.substring(0, activeSymptoms.length()-2) + "\n";
         }
         return "";
     }

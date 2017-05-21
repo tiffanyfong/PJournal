@@ -74,4 +74,11 @@
     <string name="medium_pads">Medium Pads</string>
     <string name="heavy_pads">Heavy Pads</string>
     <string name="menstrual_cups">Menstrual Cups</string>
+    <string name="clear_all_data">Clear All Data</string>
+    <string name="note_updated">Note updated</string>
+    <string name="moods">Moods</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="are_you_sure_delete_data">Are you sure you want to delete all your data?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

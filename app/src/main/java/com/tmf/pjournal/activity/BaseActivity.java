@@ -82,7 +82,7 @@ public abstract class BaseActivity extends AppCompatActivity
 
         switch (item.getItemId()) {
             case R.id.nav_calendar:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, CalendarActivity.class));
                 break;
 
             case R.id.nav_stats:

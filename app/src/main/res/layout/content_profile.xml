@@ -12,12 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="36sp"
-        android:text="Profile"/>
+        android:text="@string/profile"/>
 
     <Button
         android:id="@+id/btnClearAllData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Clear All Data"/>
+        android:text="@string/clear_all_data"/>
 
 </LinearLayout>

@@ -50,8 +50,8 @@ public class NoteActivity extends AppCompatActivity {
     }
 
     private String retrieveDate() {
-        if (getIntent().hasExtra(MainActivity.KEY_DATE_STRING)) {
-            return getIntent().getStringExtra(MainActivity.KEY_DATE_STRING);
+        if (getIntent().hasExtra(CalendarActivity.KEY_DATE_STRING)) {
+            return getIntent().getStringExtra(CalendarActivity.KEY_DATE_STRING);
         }
         else {
             return BaseActivity.getCurrentDateString();
