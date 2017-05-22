@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.tmf.pjournal.MainApplication;
-import com.tmf.pjournal.NoteFragmentPager;
+import com.tmf.pjournal.adapter.NoteFragmentPager;
 import com.tmf.pjournal.R;
 import com.tmf.pjournal.data.Note;
 

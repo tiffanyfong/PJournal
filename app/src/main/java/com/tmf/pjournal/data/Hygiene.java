@@ -4,6 +4,8 @@ import io.realm.RealmObject;
 
 public class Hygiene extends RealmObject {
 
+    private String date;
+
     private int lightPads;
     private int mediumPads;
     private int heavyPads;
@@ -16,6 +18,13 @@ public class Hygiene extends RealmObject {
 
     public Hygiene() {}
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public int getLightPads() {
         return lightPads;

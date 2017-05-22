@@ -12,10 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.tmf.pjournal.MainApplication;
 import com.tmf.pjournal.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import io.realm.Realm;
 
 public abstract class BaseActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
@@ -71,7 +74,7 @@ public abstract class BaseActivity extends AppCompatActivity
     }
 
     protected static String getDateStringFromMillis(long millis) {
-        SimpleDateFormat formatter = new SimpleDateFormat("M/d/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
         return formatter.format(new Date(millis));
     }
 
@@ -112,6 +115,10 @@ public abstract class BaseActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    public Realm getRealm() {
+        return ((MainApplication) getApplication()).getRealm();
     }
 
 }

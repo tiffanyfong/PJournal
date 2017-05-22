@@ -86,6 +86,7 @@ public class FragmentHygiene extends Fragment {
         if (hygiene == null) {
             realm.beginTransaction();
             hygiene = realm.createObject(Hygiene.class);
+            hygiene.setDate(((NoteActivity) getActivity()).getDate());
             realm.commitTransaction();
         }
         realm.beginTransaction();

@@ -17,6 +17,16 @@
         <item>@string/tired</item>
     </string-array>
 
+    <string-array name="hygieneArray">
+        <item>@string/light_pads</item>
+        <item>@string/medium_pads</item>
+        <item>@string/heavy_pads</item>
+        <item>@string/light_tampons</item>
+        <item>@string/medium_tampons</item>
+        <item>@string/heavy_tampons</item>
+        <item>@string/menstrual_cups</item>
+    </string-array>
+
     <string name="app_name">P-Journal</string>
     <string name="title_activity_main">MainActivity</string>
 
@@ -81,4 +91,8 @@
     <string name="are_you_sure_delete_data">Are you sure you want to delete all your data?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="summary">Summary</string>
+    <string name="etNote_placeholder">Write notes here... Anything unusual? Thoughts? Important events?</string>
+    <string name="period_started_today">Period started today</string>
+    <string name="period_ended_today">Period ended today</string>
 </resources>

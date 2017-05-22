@@ -49,7 +49,7 @@ public class CalendarActivity extends BaseActivity {
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                selectedDate = (month+1) + "/" + dayOfMonth + "/" + year;
+                selectedDate = String.format("%1$2d/%2$02d/%3$02d", year, month+1, dayOfMonth);
                 getDayDataFromRealm();
                 updateNoteText();
             }
@@ -79,8 +79,14 @@ public class CalendarActivity extends BaseActivity {
         }
         else {
             String noteText = "";
-            if (!TextUtils.isEmpty(selectedNote.getNoteText()))
-                noteText = selectedNote.getNoteText() + "\n";
+            if (selectedNote.isPeriodStarted())
+                noteText += getString(R.string.period_started_today) + "\n";
+            if (selectedNote.isPeriodEnded())
+                noteText += getString(R.string.period_ended_today) + "\n";
+            noteText += selectedNote.getNoteText();
+            if (!TextUtils.isEmpty(noteText)) {
+                noteText += "\n";
+            }
             String moodsText = getAllActiveMoods(selectedNote.getMoods());
             String symptomsText = getAllActiveSymptoms(selectedNote.getSymptoms());
             tvCalendarNote.setText(noteText + symptomsText + moodsText);

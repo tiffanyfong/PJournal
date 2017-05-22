@@ -1,4 +1,4 @@
-package com.tmf.pjournal;
+package com.tmf.pjournal.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,8 +11,6 @@ import com.tmf.pjournal.noteFragment.FragmentHygiene;
 import com.tmf.pjournal.noteFragment.FragmentMoods;
 import com.tmf.pjournal.noteFragment.FragmentNote;
 import com.tmf.pjournal.noteFragment.FragmentSymptoms;
-
-import io.realm.Realm;
 
 public class NoteFragmentPager extends FragmentPagerAdapter {
     public SparseArray<Fragment> registeredFragments = new SparseArray<>();

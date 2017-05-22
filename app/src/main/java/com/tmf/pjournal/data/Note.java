@@ -6,12 +6,18 @@ import io.realm.annotations.Ignore;
 public class Note extends RealmObject {
     @Ignore
     public static final String KEY_DATE = "date";
+    @Ignore
+    public static final String KEY_PERIOD_STARTED = "periodStarted";
+    @Ignore
+    public static final String KEY_PERIOD_ENDED = "periodEnded";
 
     private String date;
     private String noteText;
     private Symptoms symptoms;
     private Moods moods;
     private Hygiene hygiene;
+    private boolean periodStarted;
+    private boolean periodEnded;
 
     public Note() {}
 
@@ -53,5 +59,21 @@ public class Note extends RealmObject {
 
     public void setHygiene(Hygiene hygiene) {
         this.hygiene = hygiene;
+    }
+
+    public boolean isPeriodStarted() {
+        return periodStarted;
+    }
+
+    public void setPeriodStarted(boolean periodStarted) {
+        this.periodStarted = periodStarted;
+    }
+
+    public boolean isPeriodEnded() {
+        return periodEnded;
+    }
+
+    public void setPeriodEnded(boolean periodEnded) {
+        this.periodEnded = periodEnded;
     }
 }

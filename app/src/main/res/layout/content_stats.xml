@@ -8,10 +8,16 @@
     android:orientation="vertical"
     tools:context="com.tmf.pjournal.activity.StatsActivity">
 
-    <TextView
+    <android.support.v4.view.ViewPager
+        android:id="@+id/statsPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="36sp"
-        android:text="Summary"/>
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.PagerTabStrip
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top" />
+
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>

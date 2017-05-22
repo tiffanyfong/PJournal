@@ -3,4 +3,21 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorLightPads">#00ffff</color>
+    <color name="colorMediumPads">#0088bb</color>
+    <color name="colorHeavyPads">#004488</color>
+    <color name="colorLightTampons">#00ff00</color>
+    <color name="colorMediumTampons">#009900</color>
+    <color name="colorHeavyTampons">#005500</color>
+    <color name="colorMenstrualCups">#cc1111</color>
+
+    <integer-array name="hygieneStackColors">
+        <item>@color/colorLightPads</item>
+        <item>@color/colorMediumPads</item>
+        <item>@color/colorHeavyPads</item>
+        <item>@color/colorLightTampons</item>
+        <item>@color/colorMediumTampons</item>
+        <item>@color/colorHeavyTampons</item>
+        <item>@color/colorMenstrualCups</item>
+    </integer-array>
 </resources>

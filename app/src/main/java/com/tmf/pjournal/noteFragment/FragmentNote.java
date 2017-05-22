@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.tmf.pjournal.R;
@@ -26,6 +27,12 @@ public class FragmentNote extends Fragment {
     @BindView(R.id.etNoteText)
     EditText etNoteText;
 
+    @BindView(R.id.cbStarted)
+    CheckBox cbStarted;
+
+    @BindView(R.id.cbEnded)
+    CheckBox cbEnded;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -35,13 +42,15 @@ public class FragmentNote extends Fragment {
         ButterKnife.bind(this, v);
         realm = ((NoteActivity) getActivity()).getRealm();
         note = realm.where(Note.class).equalTo(KEY_DATE, ((NoteActivity) getActivity()).getDate()).findFirst();
-        setNoteText();
+        loadNoteInfo();
         return v;
     }
 
-    private void setNoteText() {
+    private void loadNoteInfo() {
         if (note != null) {
             etNoteText.setText(note.getNoteText());
+            cbStarted.setChecked(note.isPeriodStarted());
+            cbEnded.setChecked(note.isPeriodEnded());
         }
     }
 
@@ -58,6 +67,8 @@ public class FragmentNote extends Fragment {
         }
         realm.beginTransaction();
         note.setNoteText(getEtNoteText());
+        note.setPeriodStarted(cbStarted.isChecked());
+        note.setPeriodEnded(cbEnded.isChecked());
         realm.commitTransaction();
     }
 }
