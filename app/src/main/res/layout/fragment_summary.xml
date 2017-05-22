@@ -6,8 +6,30 @@
     android:tag="FRAGMENT_SUMMARY"
     android:padding="10dp">
 
+    <TextView
+        android:id="@+id/tvAvgCycleLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/blackText"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:text="@string/in_your_average_cycle"/>
 
+    <TextView
+        android:id="@+id/tvAvgPeriodLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/blackText"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/in_your_average_period"/>
 
 
 

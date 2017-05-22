@@ -30,7 +30,6 @@ import io.realm.RealmResults;
 import io.realm.Sort;
 
 import static com.tmf.pjournal.data.Note.KEY_DATE;
-import static com.tmf.pjournal.data.Note.KEY_PERIOD_STARTED;
 
 public class FragmentHygieneStats extends Fragment {
     private Realm realm;

@@ -20,4 +20,6 @@
         <item>@color/colorHeavyTampons</item>
         <item>@color/colorMenstrualCups</item>
     </integer-array>
+
+    <color name="blackText">#222</color>
 </resources>

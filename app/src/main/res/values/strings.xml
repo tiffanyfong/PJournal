@@ -110,4 +110,8 @@
     <string name="etNote_placeholder">Write notes here... Anything unusual? Thoughts? Important events?</string>
     <string name="period_started_today">Period started today</string>
     <string name="period_ended_today">Period ended today</string>
+    <string name="in_your_average_cycle">in your average cycle</string>
+    <string name="in_your_average_period">in your average period</string>
+    <string name="x_days">%1$d days</string>
+    <string name="not_enough_information">Not enough information</string>
 </resources>
