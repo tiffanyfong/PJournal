@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ToggleButton;
+import android.widget.CheckBox;
 
 import com.tmf.pjournal.R;
 import com.tmf.pjournal.activity.NoteActivity;
@@ -15,23 +15,22 @@ import com.tmf.pjournal.data.Symptoms;
 import io.realm.Realm;
 
 public class FragmentSymptoms extends Fragment {
-    public static final String TAG = "FragmentSymptoms";
 
     private Symptoms symptoms;
     private Realm realm;
 
-    private ToggleButton tbAcne;
-    private ToggleButton tbBackache;
-    private ToggleButton tbBloating;
-    private ToggleButton tbBloodClots;
-    private ToggleButton tbCramps;
-    private ToggleButton tbDizziness;
-    private ToggleButton tbFatigue;
-    private ToggleButton tbHeadache;
-    private ToggleButton tbInsomnia;
-    private ToggleButton tbNausea;
-    private ToggleButton tbStomachache;
-    private ToggleButton tbTenderBreasts;
+    private CheckBox cbAcne;
+    private CheckBox cbBackache;
+    private CheckBox cbBloating;
+    private CheckBox cbBloodClots;
+    private CheckBox cbCramps;
+    private CheckBox cbDizziness;
+    private CheckBox cbFatigue;
+    private CheckBox cbHeadache;
+    private CheckBox cbInsomnia;
+    private CheckBox cbNausea;
+    private CheckBox cbStomachache;
+    private CheckBox cbTenderBreasts;
 
     @Nullable
     @Override
@@ -40,18 +39,18 @@ public class FragmentSymptoms extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_symptoms, container, false);
 
-        tbAcne = (ToggleButton) v.findViewById(R.id.tbAcne);
-        tbBackache = (ToggleButton) v.findViewById(R.id.tbBackache);
-        tbBloating = (ToggleButton) v.findViewById(R.id.tbBloating);
-        tbBloodClots = (ToggleButton) v.findViewById(R.id.tbBloodClots);
-        tbCramps = (ToggleButton) v.findViewById(R.id.tbCramps);
-        tbDizziness = (ToggleButton) v.findViewById(R.id.tbDizziness);
-        tbFatigue = (ToggleButton) v.findViewById(R.id.tbFatigue);
-        tbHeadache = (ToggleButton) v.findViewById(R.id.tbHeadache);
-        tbInsomnia = (ToggleButton) v.findViewById(R.id.tbInsomnia);
-        tbNausea = (ToggleButton) v.findViewById(R.id.tbNausea);
-        tbStomachache = (ToggleButton) v.findViewById(R.id.tbStomachache);
-        tbTenderBreasts = (ToggleButton) v.findViewById(R.id.tbTenderBreasts);
+        cbAcne = (CheckBox) v.findViewById(R.id.cbAcne);
+        cbBackache = (CheckBox) v.findViewById(R.id.cbBackache);
+        cbBloating = (CheckBox) v.findViewById(R.id.cbBloating);
+        cbBloodClots = (CheckBox) v.findViewById(R.id.cbBloodClots);
+        cbCramps = (CheckBox) v.findViewById(R.id.cbCramps);
+        cbDizziness = (CheckBox) v.findViewById(R.id.cbDizziness);
+        cbFatigue = (CheckBox) v.findViewById(R.id.cbFatigue);
+        cbHeadache = (CheckBox) v.findViewById(R.id.cbHeadache);
+        cbInsomnia = (CheckBox) v.findViewById(R.id.cbInsomnia);
+        cbNausea = (CheckBox) v.findViewById(R.id.cbNausea);
+        cbStomachache = (CheckBox) v.findViewById(R.id.cbStomachache);
+        cbTenderBreasts = (CheckBox) v.findViewById(R.id.cbTenderBreasts);
 
         realm = ((NoteActivity) getActivity()).getRealm();
 
@@ -63,18 +62,18 @@ public class FragmentSymptoms extends Fragment {
 
     public void loadSymptoms() {
         if (symptoms != null) {
-            tbAcne.setChecked(symptoms.isAcne());
-            tbBackache.setChecked(symptoms.isBackache());
-            tbBloating.setChecked(symptoms.isBloating());
-            tbBloodClots.setChecked(symptoms.isBloodClots());
-            tbCramps.setChecked(symptoms.isCramps());
-            tbDizziness.setChecked(symptoms.isDizziness());
-            tbFatigue.setChecked(symptoms.isFatigue());
-            tbHeadache.setChecked(symptoms.isHeadache());
-            tbInsomnia.setChecked(symptoms.isInsomnia());
-            tbNausea.setChecked(symptoms.isNausea());
-            tbStomachache.setChecked(symptoms.isStomachache());
-            tbTenderBreasts.setChecked(symptoms.isTenderBreasts());
+            cbAcne.setChecked(symptoms.isAcne());
+            cbBackache.setChecked(symptoms.isBackache());
+            cbBloating.setChecked(symptoms.isBloating());
+            cbBloodClots.setChecked(symptoms.isBloodClots());
+            cbCramps.setChecked(symptoms.isCramps());
+            cbDizziness.setChecked(symptoms.isDizziness());
+            cbFatigue.setChecked(symptoms.isFatigue());
+            cbHeadache.setChecked(symptoms.isHeadache());
+            cbInsomnia.setChecked(symptoms.isInsomnia());
+            cbNausea.setChecked(symptoms.isNausea());
+            cbStomachache.setChecked(symptoms.isStomachache());
+            cbTenderBreasts.setChecked(symptoms.isTenderBreasts());
         }
     }
 
@@ -86,18 +85,18 @@ public class FragmentSymptoms extends Fragment {
         }
         realm.beginTransaction();
 
-        symptoms.setAcne(tbAcne.isChecked());
-        symptoms.setBackache(tbBackache.isChecked());
-        symptoms.setBloating(tbBloating.isChecked());
-        symptoms.setBloodClots(tbBloodClots.isChecked());
-        symptoms.setCramps(tbCramps.isChecked());
-        symptoms.setDizziness(tbDizziness.isChecked());
-        symptoms.setFatigue(tbFatigue.isChecked());
-        symptoms.setHeadache(tbHeadache.isChecked());
-        symptoms.setInsomnia(tbInsomnia.isChecked());
-        symptoms.setNausea(tbNausea.isChecked());
-        symptoms.setStomachache(tbStomachache.isChecked());
-        symptoms.setTenderBreasts(tbTenderBreasts.isChecked());
+        symptoms.setAcne(cbAcne.isChecked());
+        symptoms.setBackache(cbBackache.isChecked());
+        symptoms.setBloating(cbBloating.isChecked());
+        symptoms.setBloodClots(cbBloodClots.isChecked());
+        symptoms.setCramps(cbCramps.isChecked());
+        symptoms.setDizziness(cbDizziness.isChecked());
+        symptoms.setFatigue(cbFatigue.isChecked());
+        symptoms.setHeadache(cbHeadache.isChecked());
+        symptoms.setInsomnia(cbInsomnia.isChecked());
+        symptoms.setNausea(cbNausea.isChecked());
+        symptoms.setStomachache(cbStomachache.isChecked());
+        symptoms.setTenderBreasts(cbTenderBreasts.isChecked());
         ((NoteActivity) getActivity()).getNote().setSymptoms(symptoms);
 
         realm.commitTransaction();

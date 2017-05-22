@@ -7,35 +7,35 @@
     android:orientation="vertical"
     tools:context="com.tmf.pjournal.activity.ResourcesActivity">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#777"/>
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#777"/>-->
 
-    <Button
-        android:id="@+id/btnWordsToKnow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/words_to_know"
-        android:textAllCaps="false"
-        android:gravity="center_vertical|start"
-        style="?android:attr/borderlessButtonStyle"
-        />
+    <!--<Button-->
+        <!--android:id="@+id/btnWordsToKnow"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/words_to_know"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:gravity="center_vertical|start"-->
+        <!--style="?android:attr/borderlessButtonStyle"-->
+        <!--/>-->
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#777"/>
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#777"/>-->
 
-    <Button
-        android:id="@+id/btnPJournalFAQs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="@string/p_journal_faqs"
-        android:gravity="center_vertical|start"
-        style="?android:attr/borderlessButtonStyle"
-        />
+    <!--<Button-->
+        <!--android:id="@+id/btnPJournalFAQs"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:text="@string/p_journal_faqs"-->
+        <!--android:gravity="center_vertical|start"-->
+        <!--style="?android:attr/borderlessButtonStyle"-->
+        <!--/>-->
 
     <View
         android:layout_width="match_parent"

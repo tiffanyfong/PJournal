@@ -20,15 +20,8 @@
     <group android:id="@+id/navmenu_bottom">
 
         <item
-            android:id="@+id/nav_profile"
-            android:title="@string/profile"/>
-
-
-        <!--TODO implement login-->
-        <item
-            android:id="@+id/nav_logout"
-            android:title="@string/logout"
-            android:visible="false"/>
+            android:id="@+id/nav_settings"
+            android:title="@string/settings"/>
 
     </group>
 </menu>

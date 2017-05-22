@@ -17,7 +17,6 @@ import butterknife.ButterKnife;
 import io.realm.Realm;
 
 public class FragmentHygiene extends Fragment {
-    public static final String TAG = "FragmentHygiene";
 
     private Hygiene hygiene;
     private Realm realm;

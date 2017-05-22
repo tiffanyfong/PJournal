@@ -9,123 +9,97 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="10dp">
-
-        <!--<GridView-->
-            <!--android:id="@+id/gvMoods"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:gravity="center"-->
-            <!--android:numColumns="3"-->
-            <!--android:verticalSpacing="24dp"-->
-            <!--android:horizontalSpacing="10dp"-->
-            <!--android:stretchMode="spacingWidthUniform"-->
-            <!--/>-->
-
-        <ToggleButton
-            android:id="@+id/tbAngry"
+        
+        <CheckBox
+            android:id="@+id/cbAngry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/angry"
-            android:textOff="@string/angry"/>
+            android:text="@string/angry"/>
 
-        <ToggleButton
-            android:id="@+id/tbAnxious"
+        <CheckBox
+            android:id="@+id/cbAnxious"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/anxious"
-            android:textOff="@string/anxious"/>
+            android:text="@string/anxious"/>
 
-        <ToggleButton
-            android:id="@+id/tbBlah"
+        <CheckBox
+            android:id="@+id/cbBlah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/blah"
-            android:textOff="@string/blah"/>
+            android:text="@string/blah"/>
 
-        <ToggleButton
-            android:id="@+id/tbConfused"
+        <CheckBox
+            android:id="@+id/cbConfused"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/confused"
-            android:textOff="@string/confused"/>
+            android:text="@string/confused"/>
 
-        <ToggleButton
-            android:id="@+id/tbCalm"
+        <CheckBox
+            android:id="@+id/cbCalm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/calm"
-            android:textOff="@string/calm"/>
+            android:text="@string/calm"/>
 
-        <ToggleButton
-            android:id="@+id/tbDepressed"
+        <CheckBox
+            android:id="@+id/cbDepressed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/depressed"
-            android:textOff="@string/depressed"/>
+            android:text="@string/depressed"/>
 
-        <ToggleButton
-            android:id="@+id/tbFine"
+        <CheckBox
+            android:id="@+id/cbFine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/fine"
-            android:textOff="@string/fine"/>
+            android:text="@string/fine"/>
 
-        <ToggleButton
-            android:id="@+id/tbHappy"
+        <CheckBox
+            android:id="@+id/cbHappy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/happy"
-            android:textOff="@string/happy"/>
+            android:text="@string/happy"/>
 
-        <ToggleButton
-            android:id="@+id/tbHyper"
+        <CheckBox
+            android:id="@+id/cbHyper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/hyper"
-            android:textOff="@string/hyper"/>
+            android:text="@string/hyper"/>
 
-        <ToggleButton
-            android:id="@+id/tbInLove"
+        <CheckBox
+            android:id="@+id/cbInLove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/in_love"
-            android:textOff="@string/in_love"/>
+            android:text="@string/in_love"/>
 
-        <ToggleButton
-            android:id="@+id/tbIrritable"
+        <CheckBox
+            android:id="@+id/cbIrritable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/irritable"
-            android:textOff="@string/irritable"/>
+            android:text="@string/irritable"/>
 
-        <ToggleButton
-            android:id="@+id/tbSad"
+        <CheckBox
+            android:id="@+id/cbSad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/sad"
-            android:textOff="@string/sad"/>
+            android:text="@string/sad"/>
 
-        <ToggleButton
-            android:id="@+id/tbSick"
+        <CheckBox
+            android:id="@+id/cbSick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/sick"
-            android:textOff="@string/sick"/>
+            android:text="@string/sick"/>
 
-        <ToggleButton
-            android:id="@+id/tbStressed"
+        <CheckBox
+            android:id="@+id/cbStressed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/stressed"
-            android:textOff="@string/stressed"/>
+            android:text="@string/stressed"/>
 
-        <ToggleButton
-            android:id="@+id/tbTired"
+        <CheckBox
+            android:id="@+id/cbTired"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/tired"
-            android:textOff="@string/tired"/>
+            android:text="@string/tired"/>
     </LinearLayout>
 </ScrollView>

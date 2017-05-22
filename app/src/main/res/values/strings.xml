@@ -1,4 +1,19 @@
 <resources>
+    <string-array name="symptomsArray">
+        <item>@string/acne</item>
+        <item>@string/backache</item>
+        <item>@string/bloating</item>
+        <item>@string/blood_clots</item>
+        <item>@string/cramps</item>
+        <item>@string/dizziness</item>
+        <item>@string/fatigue</item>
+        <item>@string/headache</item>
+        <item>@string/insomnia</item>
+        <item>@string/nausea</item>
+        <item>@string/stomachache</item>
+        <item>@string/tender_breasts</item>
+    </string-array>
+
     <string-array name="moodsArray">
         <item>@string/angry</item>
         <item>@string/anxious</item>
@@ -41,7 +56,7 @@
     <string name="statistics">Statistics</string>
     <string name="search_notes">Search Notes</string>
     <string name="resources">Resources</string>
-    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
     <string name="logout">Logout</string>
     <string name="plannedparenthood_org">PlannedParenthood.org</string>
     <string name="womenshealth_gov">WomensHealth.gov</string>

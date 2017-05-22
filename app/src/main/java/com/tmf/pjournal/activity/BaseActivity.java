@@ -100,7 +100,7 @@ public abstract class BaseActivity extends AppCompatActivity
                 startActivity(new Intent(this, ResourcesActivity.class));
                 break;
 
-            case R.id.nav_profile:
+            case R.id.nav_settings:
                 startActivity(new Intent(this, ProfileActivity.class));
                 break;
         }

@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:orientation="vertical"
-    tools:context="com.tmf.pjournal.activity.ProfileActivity">
+    tools:context="com.tmf.pjournal.activity.ProfileActivity"
+    android:padding="10dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="36sp"
-        android:text="@string/profile"/>
+        android:textAlignment="center"
+        android:paddingBottom="10dp"
+        android:text="@string/settings"/>
 
     <Button
         android:id="@+id/btnClearAllData"

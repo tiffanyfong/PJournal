@@ -19,14 +19,6 @@ public class ResourcesActivity extends BaseActivity {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(PLANNED_PARENTHOOD_URL)));
     }
 
-    @OnClick(R.id.btnPJournalFAQs) public void btnFAQsPressed() {
-
-    }
-
-    @OnClick(R.id.btnWordsToKnow) public void btnWordsPressed() {
-
-    }
-
     @OnClick(R.id.btnWomensHealth) public void btnWomensPressed() {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(WOMENS_HEALTH_URL)));
     }

@@ -9,103 +9,80 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="10dp">
 
-        <!--<GridView-->
-            <!--android:id="@+id/gvSymptoms"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:gravity="center"-->
-            <!--android:numColumns="3"-->
-            <!--android:verticalSpacing="24dp"-->
-            <!--android:horizontalSpacing="10dp"-->
-            <!--android:stretchMode="spacingWidthUniform"-->
-            <!--/>-->
-
-        <ToggleButton
-            android:id="@+id/tbAcne"
+        <CheckBox
+            android:id="@+id/cbAcne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/acne"
-            android:textOff="@string/acne"/>
+            android:text="@string/acne"/>
 
-        <ToggleButton
-            android:id="@+id/tbBackache"
+        <CheckBox
+            android:id="@+id/cbBackache"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/backache"
-            android:textOff="@string/backache"/>
+            android:text="@string/backache"/>
 
-        <ToggleButton
-            android:id="@+id/tbBloating"
+        <CheckBox
+            android:id="@+id/cbBloating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/bloating"
-            android:textOff="@string/bloating"/>
+            android:text="@string/bloating"/>
 
-        <ToggleButton
-            android:id="@+id/tbBloodClots"
+        <CheckBox
+            android:id="@+id/cbBloodClots"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/blood_clots"
-            android:textOff="@string/blood_clots"/>
+            android:text="@string/blood_clots"/>
 
-        <ToggleButton
-            android:id="@+id/tbCramps"
+        <CheckBox
+            android:id="@+id/cbCramps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/cramps"
-            android:textOff="@string/cramps"/>
+            android:text="@string/cramps"/>
 
-        <ToggleButton
-            android:id="@+id/tbDizziness"
+        <CheckBox
+            android:id="@+id/cbDizziness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/dizziness"
-            android:textOff="@string/dizziness"/>
+            android:text="@string/dizziness"/>
 
-        <ToggleButton
-            android:id="@+id/tbFatigue"
+        <CheckBox
+            android:id="@+id/cbFatigue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/fatigue"
-            android:textOff="@string/fatigue"/>
+            android:text="@string/fatigue"/>
 
-        <ToggleButton
-            android:id="@+id/tbHeadache"
+        <CheckBox
+            android:id="@+id/cbHeadache"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/headache"
-            android:textOff="@string/headache"/>
+            android:text="@string/headache"/>
 
-        <ToggleButton
-            android:id="@+id/tbInsomnia"
+        <CheckBox
+            android:id="@+id/cbInsomnia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/insomnia"
-            android:textOff="@string/insomnia"/>
+            android:text="@string/insomnia"/>
 
-        <ToggleButton
-            android:id="@+id/tbNausea"
+        <CheckBox
+            android:id="@+id/cbNausea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/nausea"
-            android:textOff="@string/nausea"/>
+            android:text="@string/nausea"/>
 
-        <ToggleButton
-            android:id="@+id/tbStomachache"
+        <CheckBox
+            android:id="@+id/cbStomachache"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/stomachache"
-            android:textOff="@string/stomachache"/>
+            android:text="@string/stomachache"/>
 
-        <ToggleButton
-            android:id="@+id/tbTenderBreasts"
+        <CheckBox
+            android:id="@+id/cbTenderBreasts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="@string/tender_breasts"
-            android:textOff="@string/tender_breasts"/>
+            android:text="@string/tender_breasts"/>
 
     </LinearLayout>
 </ScrollView>

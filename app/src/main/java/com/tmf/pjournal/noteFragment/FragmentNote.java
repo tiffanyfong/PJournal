@@ -20,7 +20,7 @@ import io.realm.Realm;
 import static com.tmf.pjournal.data.Note.KEY_DATE;
 
 public class FragmentNote extends Fragment {
-    public static final String TAG = "FragmentNote";
+    
     private Note note;
     private Realm realm;
 

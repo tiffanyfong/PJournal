@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ToggleButton;
+import android.widget.CheckBox;
 
 import com.tmf.pjournal.R;
 import com.tmf.pjournal.activity.NoteActivity;
@@ -15,28 +15,27 @@ import com.tmf.pjournal.data.Moods;
 import io.realm.Realm;
 
 public class FragmentMoods extends Fragment {
-    public static final String TAG = "FragmentMoods";
 
     private String[] moodsArray; // TODO simplify code
 
     private Moods moods;
     private Realm realm;
 
-    private ToggleButton tbAngry;
-    private ToggleButton tbAnxious;
-    private ToggleButton tbBlah;
-    private ToggleButton tbCalm;
-    private ToggleButton tbConfused;
-    private ToggleButton tbDepressed;
-    private ToggleButton tbFine;
-    private ToggleButton tbHappy;
-    private ToggleButton tbHyper;
-    private ToggleButton tbInLove;
-    private ToggleButton tbIrritable;
-    private ToggleButton tbSad;
-    private ToggleButton tbSick;
-    private ToggleButton tbStressed;
-    private ToggleButton tbTired;
+    private CheckBox cbAngry;
+    private CheckBox cbAnxious;
+    private CheckBox cbBlah;
+    private CheckBox cbCalm;
+    private CheckBox cbConfused;
+    private CheckBox cbDepressed;
+    private CheckBox cbFine;
+    private CheckBox cbHappy;
+    private CheckBox cbHyper;
+    private CheckBox cbInLove;
+    private CheckBox cbIrritable;
+    private CheckBox cbSad;
+    private CheckBox cbSick;
+    private CheckBox cbStressed;
+    private CheckBox cbTired;
 
     @Nullable
     @Override
@@ -47,21 +46,21 @@ public class FragmentMoods extends Fragment {
 
         moodsArray = getResources().getStringArray(R.array.moodsArray);
 
-        tbAngry = (ToggleButton) v.findViewById(R.id.tbAngry);
-        tbAnxious = (ToggleButton) v.findViewById(R.id.tbAnxious);
-        tbBlah = (ToggleButton) v.findViewById(R.id.tbBlah);
-        tbCalm = (ToggleButton) v.findViewById(R.id.tbCalm);
-        tbConfused = (ToggleButton) v.findViewById(R.id.tbConfused);
-        tbDepressed = (ToggleButton) v.findViewById(R.id.tbDepressed);
-        tbFine = (ToggleButton) v.findViewById(R.id.tbFine);
-        tbHappy = (ToggleButton) v.findViewById(R.id.tbHappy);
-        tbHyper = (ToggleButton) v.findViewById(R.id.tbHyper);
-        tbInLove = (ToggleButton) v.findViewById(R.id.tbInLove);
-        tbIrritable = (ToggleButton) v.findViewById(R.id.tbIrritable);
-        tbSad = (ToggleButton) v.findViewById(R.id.tbSad);
-        tbSick = (ToggleButton) v.findViewById(R.id.tbSick);
-        tbStressed = (ToggleButton) v.findViewById(R.id.tbStressed);
-        tbTired = (ToggleButton) v.findViewById(R.id.tbTired);
+        cbAngry = (CheckBox) v.findViewById(R.id.cbAngry);
+        cbAnxious = (CheckBox) v.findViewById(R.id.cbAnxious);
+        cbBlah = (CheckBox) v.findViewById(R.id.cbBlah);
+        cbCalm = (CheckBox) v.findViewById(R.id.cbCalm);
+        cbConfused = (CheckBox) v.findViewById(R.id.cbConfused);
+        cbDepressed = (CheckBox) v.findViewById(R.id.cbDepressed);
+        cbFine = (CheckBox) v.findViewById(R.id.cbFine);
+        cbHappy = (CheckBox) v.findViewById(R.id.cbHappy);
+        cbHyper = (CheckBox) v.findViewById(R.id.cbHyper);
+        cbInLove = (CheckBox) v.findViewById(R.id.cbInLove);
+        cbIrritable = (CheckBox) v.findViewById(R.id.cbIrritable);
+        cbSad = (CheckBox) v.findViewById(R.id.cbSad);
+        cbSick = (CheckBox) v.findViewById(R.id.cbSick);
+        cbStressed = (CheckBox) v.findViewById(R.id.cbStressed);
+        cbTired = (CheckBox) v.findViewById(R.id.cbTired);
 
         realm = ((NoteActivity) getActivity()).getRealm();
         moods = ((NoteActivity) getActivity()).getNote().getMoods();
@@ -72,21 +71,21 @@ public class FragmentMoods extends Fragment {
 
     public void loadMoods() {
         if (moods != null) {
-            tbAngry.setChecked(moods.isAngry());
-            tbAnxious.setChecked(moods.isAnxious());
-            tbBlah.setChecked(moods.isBlah());
-            tbCalm.setChecked(moods.isCalm());
-            tbConfused.setChecked(moods.isConfused());
-            tbDepressed.setChecked(moods.isDepressed());
-            tbFine.setChecked(moods.isFine());
-            tbHappy.setChecked(moods.isHappy());
-            tbHyper.setChecked(moods.isHyper());
-            tbInLove.setChecked(moods.isInLove());
-            tbIrritable.setChecked(moods.isIrritable());
-            tbSad.setChecked(moods.isSad());
-            tbSick.setChecked(moods.isSick());
-            tbStressed.setChecked(moods.isStressed());
-            tbTired.setChecked(moods.isTired());
+            cbAngry.setChecked(moods.isAngry());
+            cbAnxious.setChecked(moods.isAnxious());
+            cbBlah.setChecked(moods.isBlah());
+            cbCalm.setChecked(moods.isCalm());
+            cbConfused.setChecked(moods.isConfused());
+            cbDepressed.setChecked(moods.isDepressed());
+            cbFine.setChecked(moods.isFine());
+            cbHappy.setChecked(moods.isHappy());
+            cbHyper.setChecked(moods.isHyper());
+            cbInLove.setChecked(moods.isInLove());
+            cbIrritable.setChecked(moods.isIrritable());
+            cbSad.setChecked(moods.isSad());
+            cbSick.setChecked(moods.isSick());
+            cbStressed.setChecked(moods.isStressed());
+            cbTired.setChecked(moods.isTired());
         }
     }
 
@@ -98,21 +97,21 @@ public class FragmentMoods extends Fragment {
         }
         realm.beginTransaction();
 
-        moods.setAngry(tbAngry.isChecked());
-        moods.setAnxious(tbAnxious.isChecked());
-        moods.setBlah(tbBlah.isChecked());
-        moods.setCalm(tbCalm.isChecked());
-        moods.setConfused(tbConfused.isChecked());
-        moods.setDepressed(tbDepressed.isChecked());
-        moods.setFine(tbFine.isChecked());
-        moods.setHappy(tbHappy.isChecked());
-        moods.setHyper(tbHyper.isChecked());
-        moods.setInLove(tbInLove.isChecked());
-        moods.setIrritable(tbIrritable.isChecked());
-        moods.setSad(tbSad.isChecked());
-        moods.setSick(tbSick.isChecked());
-        moods.setStressed(tbStressed.isChecked());
-        moods.setTired(tbTired.isChecked());
+        moods.setAngry(cbAngry.isChecked());
+        moods.setAnxious(cbAnxious.isChecked());
+        moods.setBlah(cbBlah.isChecked());
+        moods.setCalm(cbCalm.isChecked());
+        moods.setConfused(cbConfused.isChecked());
+        moods.setDepressed(cbDepressed.isChecked());
+        moods.setFine(cbFine.isChecked());
+        moods.setHappy(cbHappy.isChecked());
+        moods.setHyper(cbHyper.isChecked());
+        moods.setInLove(cbInLove.isChecked());
+        moods.setIrritable(cbIrritable.isChecked());
+        moods.setSad(cbSad.isChecked());
+        moods.setSick(cbSick.isChecked());
+        moods.setStressed(cbStressed.isChecked());
+        moods.setTired(cbTired.isChecked());
         ((NoteActivity) getActivity()).getNote().setMoods(moods);
 
         realm.commitTransaction();
